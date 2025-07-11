@@ -2,7 +2,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 
 const UserCardLoader = () => {
   return (
-    <div className="w-full flex flex-col border border-border bg-white shadow-sm p-6 rounded-2xl space-y-4">
+    <div className="w-full flex flex-col border border-border bg-white dark:bg-sidebar shadow-sm p-6 rounded-2xl space-y-4">
       {/* Name + Username */}
       <div className="space-y-2">
         <Skeleton className="h-6 w-2/3" />

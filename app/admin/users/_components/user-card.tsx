@@ -4,7 +4,7 @@ import React from 'react'
 
 const UserCard = ({user} : {user: IUser}) => {
   return (
-    <div className="w-full flex flex-col border border-border bg-white shadow-sm p-6 rounded-2xl space-y-4">
+    <div className="w-full flex flex-col border border-border bg-white dark:bg-sidebar shadow-sm p-6 rounded-2xl space-y-4">
       <div className="space-y-1">
         <h2 className="text-2xl font-bold text-green-700">{user.name}</h2>
         <p className="text-sm text-muted-foreground">@{user.username}</p>

@@ -1,8 +1,12 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { Sidebar, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem } from "@/components/ui/sidebar"
+import { cn } from "@/lib/utils"
 import { BookOpen, Bot, ChevronRight, CodeIcon, Home, LucideIcon, Settings2, SquareTerminal, User2 } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export function AppSidebar() {
   interface IItems {
@@ -103,6 +107,7 @@ export function AppSidebar() {
         ],
       },
   ]
+  const pathName = usePathname()
   return (
     <Sidebar className="h-[100vh]">
       <SidebarMenu className="p-2">
@@ -112,26 +117,26 @@ export function AppSidebar() {
         </div>
         <div className="flex flex-col gap-2">
           <Link href={'/admin'}>
-            <Button className="w-full justify-start  cursor-pointer">
+            <Button className={cn('w-full justify-start  cursor-pointer dark:text-white', pathName === '/admin' ? 'bg-primary' : 'bg-gray-500 dark:bg-gray-700')}>
               <Home />
               Dashboard
             </Button>
           </Link>
           <Link href={'/admin/users'}>
-            <Button className="w-full justify-start cursor-pointer">
+            <Button className={cn('w-full justify-start cursor-pointer dark:text-white', pathName === '/admin/users' ? 'bg-primary' : 'bg-gray-500 dark:bg-gray-700')}>
               <User2 />
               Users
             </Button>
           </Link>
           <Link href={'/admin/table'}>
-            <Button className="w-full justify-start cursor-pointer">
+            <Button className={cn('w-full justify-start cursor-pointer dark:text-white', pathName === '/admin/table' ? 'bg-primary' : 'bg-gray-500 dark:bg-gray-700')}>
               <User2 />
               Users table
             </Button>
           </Link>
         </div>
 
-        {navMain.map((item) => (
+        {/* {navMain.map((item) => (
           <Collapsible
             key={item.title}
             asChild
@@ -161,7 +166,7 @@ export function AppSidebar() {
               </CollapsibleContent>
             </SidebarMenuItem>
           </Collapsible>
-        ))}
+        ))} */}
       </SidebarMenu>
     </Sidebar>
   )
