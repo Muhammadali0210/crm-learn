@@ -19,7 +19,7 @@ const UserList = () => {
         if (isLoading || allLoaded) return;
         setIsLoading(true)
         try {
-            const res = await getUserByFilter({ page, limit: 6 });
+            const res: any = await getUserByFilter({ page, limit: 6 });
 
             if (res.length < 6) {
                 setAllLoaded(true)

@@ -41,7 +41,7 @@ const UserList = () => {
         fetchData();
     }, [page, limit]);
 
-    if(isLoading) {
+    if(isLoading && usersList.length === 0) {
         return (
             <div className="w-full mt-3">
                 <TableLoader limit={limit} />
