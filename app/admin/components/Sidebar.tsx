@@ -123,6 +123,12 @@ export function AppSidebar() {
               Users
             </Button>
           </Link>
+          <Link href={'/admin/table'}>
+            <Button className="w-full justify-start cursor-pointer">
+              <User2 />
+              Users table
+            </Button>
+          </Link>
         </div>
 
         {navMain.map((item) => (
