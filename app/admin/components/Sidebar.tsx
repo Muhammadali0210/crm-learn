@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { Sidebar, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem } from "@/components/ui/sidebar"
 import { cn } from "@/lib/utils"
-import { BookOpen, Bot, ChevronRight, CodeIcon, Home, LucideIcon, Settings2, SquareTerminal, User2 } from "lucide-react"
+import { BookOpen, Bot, ChevronRight, CodeIcon, DroneIcon, Home, LucideIcon, Settings2, SquareTerminal, User2 } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -132,6 +132,12 @@ export function AppSidebar() {
             <Button className={cn('w-full justify-start cursor-pointer dark:text-white', pathName === '/admin/table' ? 'bg-primary' : 'bg-gray-500 dark:bg-gray-700')}>
               <User2 />
               Users table
+            </Button>
+          </Link>
+          <Link href={'/admin/ai'}>
+            <Button className={cn('w-full justify-start cursor-pointer dark:text-white', pathName === '/admin/ai' ? 'bg-primary' : 'bg-gray-500 dark:bg-gray-700')}>
+              <DroneIcon />
+              Mentor
             </Button>
           </Link>
         </div>
